@@ -1,0 +1,162 @@
+ html {
+    scroll-behavior: smooth;
+}
+
+    body{
+        font-family: 'Montserrat';
+    }
+    #heading{
+        text-align: center;
+    }
+    #heading h1{
+        position: -webkit-sticky;
+        position: sticky;
+    }
+    body, html {
+    height: 100%;
+}
+   .round {
+  border-radius: 50%;
+       height: 10%;
+       width: 10%;
+       display: block;
+       margin-left: auto;
+       margin-right: auto;
+}
+  .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;    
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+      display: block;
+}
+
+.sidenav a {
+  padding: 8px 8px 120px 8px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+    text-align: center;
+}
+
+
+    
+.sidenav a:hover {
+  color: #818181;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+ @media (max-width: 700px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+   
+    }
+* {
+  box-sizing:border-box;
+}
+
+    #row{
+        padding: 50px;
+    }
+
+#row:after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+#column-66 {
+  float: right;
+  width: 50%;
+  padding: 20px;
+}
+
+#column-33 {
+  float: left;
+  width: 50%;
+  padding: 20px;
+text-align: center;
+}
+
+#column-33 img {
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+    border-radius: 50%;
+}
+
+
+
+    #heading h4 a{
+        padding: 20px;
+        text-decoration: none;
+        color: black;
+    }
+    #heading h4 a .fa{
+        transition: 0.5s;
+        font-size: 20px;
+    }
+    
+    #heading h4 a:hover .fa{
+        transform: scale(1.5);
+    }
+        #heading h1 a{
+            text-decoration: none;
+            color: black;
+            display: block;
+            margin-top: 100px;
+        }
+    
+    #heading h1 a .fa{
+        transition: 0.5s;
+        font-size: 40px;
+    }
+    
+    #heading h1 a:hover .fa{
+        transform: scale(1.5);
+    }
+
+    #me {
+        display: block;
+        margin-top: 180px;
+        padding: 50px;
+    }
+
+#scroll{
+    display: none;
+    position: fixed;
+    bottom:40px;
+    right: 50px;
+    z-index: 99;
+    text-decoration: none;
+    outline: none;
+    color: black;
+    transition: 0.5s;
+    font-size: 40px;
+    padding: 0;
+    border: none;
+    background: none;
+}
+#scroll:hover{
+    transform: scale(1.5);
+}

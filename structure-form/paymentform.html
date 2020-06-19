@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Payment Form</title>
+<meta charset="utf-8">
+<style>
+body{
+    background: #ccc;
+    display: block;
+    margin: 8px;}
+
+div{ 
+    background: pink;
+    margin: 0 auto;
+    width: 500px;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 10px;}
+
+fieldset {
+    width: 230px;
+    box-sizing: border-box;
+    margin-left: 169px;
+    border: 1px solid black;
+    border-radius: 5px;}
+
+    button{
+      cursor: pointer;
+    }
+
+.f1{
+text-align: right;
+}
+#date{
+width: 200px;
+}
+#number{
+width: 200px;
+}
+
+</style>
+
+
+</head>
+<body>
+<div>
+<h1>Payement Form</h1>
+<p>Required fields are followed by *</p>
+
+<section>
+<h2>Contact information</h2>
+
+<form>
+  <fieldset>
+    <legend>Title</legend>
+    <p>
+      <input type="radio" name="size" id="title_1" value="small">
+      <label for="title_1">Ace</label>
+    </p>
+    
+    <p>
+      <input type="radio" name="size" id="title_2" value="medium">
+      <label for="title_2">King</label>
+    </p>
+    
+    <p>
+      <input type="radio" name="size" id="title_3" value="large">
+      <label for="title_3">Queen</label>
+    </p>
+  </fieldset>
+</form><br>
+
+   <form class=f1>
+<label for="name">Name: ...*</label>
+<input type="text" id="name" name="username" placeholder="Name" /><br><br>
+
+<label for="email">Email: ...*</label>
+<input type="email" id="email" name="usermail" placeholder="Email" /><br><br>
+
+<label for="password">Password: ...*</label>
+<input type="password" id="password" placeholder="Password" />
+</form>
+</section>
+
+<section>
+<h2>Payment information</h2>
+<form>
+<label for="card">Card type:</label>
+<select id="card" name="usercard">
+<option value="visa">Visa</option>
+<option value="mc">Mastercard</option>
+<option value="amex">Credit Card</option>
+</select><br><br>
+
+<label for="card-number">Card number: ...*</label>
+  <input type="text" id="card-number"/><br><br>
+
+<label for="expiration-date">Expiration date: ...*</label>
+<input type="date" id="expiration-date"/><br><br>
+</form>
+</section> 
+
+<p><i>formatted as yyyy/mm/dd</i></p>
+<form>
+<button type="button">Validate the payment</button>
+</form>
+</div>
+</body>
+</html>

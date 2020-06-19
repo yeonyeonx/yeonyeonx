@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Guessing Number</title>
+	<meta charset="utf-8">
+
+	<style>
+
+	body {
+	margin: 10px;
+	background-color: skyblue;
+	font-family: Arial, sans-serif;
+	text-align: center;
+}
+
+.button button{
+	margin-top: 10px;
+	border-radius: 10px;
+	border-color: skyblue;
+	border-style: solid;
+	border-width: 1px;
+	width: 20%;
+	padding: 5px;
+	text-align: center;
+	font-weight: bold;
+	text-align: center;
+	cursor: pointer;
+}
+
+#historyArea {
+	margin-top: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#game {
+	background-color: pink;
+	border-radius: 10px;
+	border-style: solid;
+	padding: 10px;
+}
+
+#statusArea {
+	font-size: 120%;
+}
+
+</style>
+</head>
+<body>
+<div id="game">
+			<h1>GUESS A NUMBER OF YOUR CHOICE</h1>
+			<div id="statusArea">
+				<p>Enter a number between 1-100 and click the button...</p>
+			</div>
+			<input type="number" id="userGuess"/>
+			<div id="buttonArea" class="button">
+				<button>Guess</button>
+			</div>
+			<div id="historyArea">
+				<h2>Your Previous Guesses</h2>
+				<ol id="historyList">
+				</ol>
+			</div>
+			
+		</div>
+
+
+		<script>
+			var secretNumber = 0,
+	numberOfGuesses = 0;
+
+function writeMessage(elementId, message, appendMessage) {
+	var elemToUpdate = document.getElementById(elementId);
+	if (appendMessage) {
+		elemToUpdate.innerHTML = elemToUpdate.innerHTML + message;
+	} else {
+		elemToUpdate.innerHTML = message;
+	}
+};
+
+function newGame() {
+	secretNumber = Math.floor(Math.random() * 100) + 1;
+	numberOfGuesses = 0;
+	writeMessage('historyList', '');
+}
+
+function guessInRange(guess) {
+	return (guess > 0 && guess < 101);
+}
+
+function userGuessed() {
+	var userGuessed = document.getElementById('userGuess').value;
+	var statusArea = document.getElementById('statusArea');
+	var historyList = document.getElementById('historyList');
+	if (userGuessed.length == 0 || ! guessInRange(userGuessed)) {
+		// Nothing entered or our of range.
+		writeMessage('statusArea', '<p>Please enter a number between 1-100.</p>');
+	} else if (userGuessed.indexOf('.') != -1) {
+		writeMessage('statusArea', '<p>Please enter a number between 1-100.</p>');
+	} else {
+		numberOfGuesses++;
+
+		if (userGuessed == secretNumber) {
+			// Got it
+			writeMessage('statusArea', '<p>CONGRULATIONS!!' + numberOfGuesses +' Your Guess is RIGHT, '+ secretNumber + '. Guess again  again...</p>');
+			newGame();
+		} else if (userGuessed < secretNumber) {
+			// User needs to guess higher
+			writeMessage('statusArea', '<p>You need to guess higher than ' + userGuessed + ', WRONG...</p>');
+			writeMessage('historyList',  + userGuessed +' (too low) </br>', true);
+		} else {
+			// User needs to guess lower
+			writeMessage('statusArea', '<p>You need to guess lower than ' + userGuessed + ', WRONG...</p>');
+			writeMessage('historyList',  + userGuessed + ' (too high)</br>', true);
+		}
+	}
+
+	document.getElementById('userGuess').value = '';	
+}
+
+window.onload = function() {
+	newGame();
+	document.getElementById('buttonArea').addEventListener('click', userGuessed);
+};
+		</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nayan Gurung</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1", user-scalable="no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Caveat' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> 
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="yeon.html">Home</a>
+        <a href="#">Profiles</a>
+        <a href="br.html">Book Reviews</a>
+        <a href="wd.html" target="_blank">Exercises</a>
+    </div>
+
+    <div id="main">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        <img src="yeon.jpg" alt="Avatar" class="round">
+    
+    <div id="heading">
+        <h1>Nayan Gurung</h1>
+        <h4>Student</h4>
+        <h4>BSc (Hons) Computing</h4>
+        <h4>The British College</h4>
+        <h4><i class="fa fa-envelope-o" aria-hidden="true"></i> yeonyeonx@gmail.com</h4>
+        <h4><i class="fa fa-phone" aria-hidden="true"></i> (+977) 9810109493</h4>
+        <h4><a href="https://steamcommunity.com/profiles/76561198403708853/" target="_blank"><i class="fa fa-steam" aria-hidden="true"></i></a>
+        <a href="http://www.facebook.com/yeonyeonx/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i> </a>
+        <a href="http://www.instagram.com/yeonyeonx" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> </a>
+        <a href="http://www.twitter.com/yeonyeonx" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> </a></h4>
+        <h1><a href="#me"><i class="fa fa-arrow-down" aria-hidden="true"></i></a></h1>
+    </div> 
+    <button onclick="topFunction()" id="scroll" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i>
+</button>
+    
+    <div style="text-align: center" id="me">
+        <h1>About me</h1>
+    </div>
+    <div id="row">
+        <div id="column-66">
+            <h1>Nayan Gurung</h1>
+            <h2>Student, BSc (Hons) Computing, The British College</h2>
+            <h4>I'm a struggling average student with a patience level of an alarm clock. I talk to dogs and the dogs talk to me. I play Dota 2 and CSGO, I have over 5000+ memes in my stash, my digestive system isn't capable of tolerating fish and pork, I'm scared of heights and I wish to marry someone who can fight off spiders and cockroaches. Please dm me if you think karela, iskus and cauli shouldn't exist, I'm planning to start a religion. Thank you for coming to my ted talk.  </h4>
+        </div>
+        <div id="column-33">
+        <img src="yeon2.jpg" width="335" height="471">
+        </div>
+    </div>
+</div> 
+
+<script>
+mybutton = document.getElementById("scroll");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+<script>
+    function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+    }
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
+   
+</body>
+</html> 

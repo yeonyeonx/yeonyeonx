@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>STORY TELLER</title>
+  <meta charset="utf-8">
+
+	<style>
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      width: 350px;
+      text-align: center;
+      background-color: skyblue;
+      margin-top: 5%;
+      margin-left: 35%;
+    }
+    
+
+    label {
+      font-weight: bold; 
+      text-align: center;
+    }
+
+    div {
+      padding-bottom: 20px;
+    }
+
+    input[type="text"] {
+      padding: 5px;
+      width: 150px;
+      margin: 10px;
+      text-align: center;
+      border-radius: 7px; 
+      border-color: transparent;
+    }
+
+    p {
+      background: lightgreen;
+      color: black;
+      padding: 10px;
+      visibility: hidden;
+      text-align: center;
+      border-radius: 15px;
+    }
+    button{
+    	background: orange;
+    	border-color: transparent;
+    	border-radius:7px;
+    	color: black;
+    }
+
+    </style>
+</head>
+<body>
+<div>
+      <label for="name">ENTER CUSTOM NAME:</label>
+      <input id="name" type="text" placeholder="Type Here">
+    </div>
+    <div>
+      <label for="np">Nepal</label><input id="np" type="radio" name="nepaluk" value="nepal" checked>
+      <label for="uk">UK</label><input id="uk" type="radio" name="nepaluk" value="uk">
+    </div>
+    <div>
+      <button class="random">GET RANDOM STORY</button>
+    </div>
+    <p class="story"></p>
+
+  <script>
+
+var customName = document.getElementById('name');
+var randomize = document.querySelector('.random');
+var story = document.querySelector('.story');
+
+function randomValueFromArray(array){
+  return array[Math.floor(Math.random()*array.length)];
+}
+
+// 2. RAW TEXT STRINGS
+
+var storyText = "It was 40 °C outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.";
+var insertX =['Obama','Oli','Trump'];
+var insertY = ['the soup kitchen', 'Disneyland', 'the White House'];
+var insertZ = ['spontaneously combusted', 'melted into a puddle on the sidewalk', 'turned into a slug and crawled away'];
+
+
+// 3. EVENT LISTENER AND PARTIAL FUNCTION DEFINITION
+
+function result() {
+  var newStory = storyText;
+  var xItem = randomValueFromArray(insertX);
+  var yItem = randomValueFromArray(insertY);
+  var zItem = randomValueFromArray(insertZ);
+
+  newStory = newStory.replace(/:insertx:/g, xItem).replace(/:inserty:/g, yItem).replace(/:insertz:/g, zItem);
+
+  if(customName.value !== '') {
+    var name = customName.value;
+    name = name.charAt(0).toUpperCase() + name.slice(1);
+    console.log(name);
+    newStory = newStory.replace(/Bob/g, name);
+  }
+ 
+
+  story.textContent = newStory;
+  story.style.visibility = 'visible';
+}
+
+randomize.addEventListener('click', result);
+  </script>
+</body>
+
+
+</html>
